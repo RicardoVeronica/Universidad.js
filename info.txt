@@ -1,0 +1,8 @@
+Este proyecto es para practicar como trabajar con nodos del DOM en JS
+Seleccionar
+Crear
+Reemplazar
+Quitar
+Event bubbling
+Delegation
+Introduccion a Event listeners
