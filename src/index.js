@@ -9,6 +9,11 @@ document.addEventListener("click", (e) => {
   if (e.target.classList.contains("borrar-curso")) {
     borrarCurso(e);
   }
+
+  if (e.target.matches("a#vaciar-carrito")) {
+    articulosCarrito = [];
+    limpiarHTML();
+  }
 });
 
 function agregarCarrito(e) {
@@ -80,11 +85,7 @@ function borrarCurso(e) {
 
   const cursoId = e.target.getAttribute("data-id");
 
-  articulosCarrito = articulosCarrito.filter((element) => {
-    element.id !== cursoId;
-  });
-
-  console.log(articulosCarrito);
+  articulosCarrito = articulosCarrito.filter((el) => el.id !== cursoId);
 
   carritoCursos();
 }
