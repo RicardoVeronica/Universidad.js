@@ -16,6 +16,11 @@ document.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  articulosCarrito = JSON.parse(localStorage.getItem("shopping-car") || []);
+  carritoCursos();
+});
+
 function agregarCarrito(e) {
   e.preventDefault();
 
@@ -72,6 +77,13 @@ function carritoCursos() {
 
     $carrito.appendChild(row);
   });
+
+  // local storage
+  syncLocalstorage();
+}
+
+function syncLocalstorage() {
+  localStorage.setItem("shopping-car", JSON.stringify(articulosCarrito));
 }
 
 function limpiarHTML() {
